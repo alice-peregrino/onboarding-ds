@@ -1,7 +1,7 @@
 imdb_rec_system
 ==============================
 
-I'm building an end-to-end recommendation system project. 
+Building an end-to-end recommendation system project. 
 
 Project Organization
 ------------
