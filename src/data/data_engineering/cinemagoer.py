@@ -1,4 +1,3 @@
-import pymongo
 from pymongo import MongoClient
 from imdb import Cinemagoer
 from tqdm import tqdm

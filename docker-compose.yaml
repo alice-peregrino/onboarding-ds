@@ -1,0 +1,14 @@
+version: "1.0"
+services:
+  mongodb:
+  image: mongo:latest
+  command: --smallfiles 
+  ports:
+    - 27017:27017
+  volumes:
+    - type: volume
+      source: mongodb_data_volume
+      target: /data/db
+volumes:
+  mongodb_data_volume:
+    external: true
