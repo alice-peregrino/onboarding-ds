@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 class Extract():
     def __init__(self, data_paths = []):
@@ -10,5 +11,5 @@ class Extract():
             temp = pd.read_json(path, lines=True)
             self.joined_data = pd.concat([self.joined_data, temp])
 
-    def save(self):
-        self.joined_data.to_json('../data/raw/output.jsonl', lines=True, orient='records')
+    def save(self, output_path):
+        self.joined_data.to_json(os.path.join(output_path, 'output.jsonl'), lines=True, orient='records')

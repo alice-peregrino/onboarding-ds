@@ -1,5 +1,6 @@
 import sqlalchemy as db
 from tqdm import tqdm
+import pandas as pd
 
 class Load:
     def __init__(self, cleaned_data):

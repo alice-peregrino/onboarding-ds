@@ -1,3 +1,6 @@
+import pandas as pd
+import os
+
 class Transform():
     def __init__(self, joined_dataset):
         self.joined_dataset = joined_dataset
@@ -16,10 +19,6 @@ class Transform():
         self.joined_dataset['year'] = self.joined_dataset['year'].apply(lambda x: x.replace("V", ""))
         self.joined_dataset['year'] = self.joined_dataset['year'].apply(lambda x: x.replace("X", ""))
         self.joined_dataset['year'] = self.joined_dataset['year'].apply(lambda x: x.strip())
-
     
-    def data_modeling(self):
-        return
-    
-    def save(self):
-        self.joined_dataset.to_json('../data/interim/cleaned.jsonl', lines=True, orient='records')
+    def save(self, output_path):
+        self.joined_dataset.to_json(os.path.join(output_path, 'cleaned.jsonl'), lines=True, orient='records')
